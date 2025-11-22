@@ -5,56 +5,298 @@
   <title>Minjae Lee | Portfolio</title>
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <style>
+    /* 기본 레이아웃 */
     body {
       font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
-      max-width: 800px;
-      margin: 40px auto;
-      padding: 0 16px;
-      line-height: 1.7;
+      margin: 0;
+      padding: 0;
+      color: #222;
+      background: #fafafa;
     }
+
+    .page {
+      max-width: 900px;
+      margin: 0 auto;
+      padding: 0 20px 40px 20px;
+      background: #fff;
+      min-height: 100vh;
+    }
+
+    /* 상단 네비게이션 */
+    .header-nav {
+      position: sticky;
+      top: 0;
+      background: #fff;
+      z-index: 10;
+      border-bottom: 1px solid #eee;
+    }
+
+    .header-inner {
+      max-width: 900px;
+      margin: 0 auto;
+      padding: 18px 20px;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+    }
+
+    .logo {
+      font-weight: 700;
+      font-size: 20px;
+    }
+
+    .nav-links a {
+      margin-left: 24px;
+      text-decoration: none;
+      color: #666;
+      font-size: 15px;
+    }
+
+    .nav-links a:hover {
+      color: #000;
+    }
+
+    /* 섹션 공통 스타일 */
+    section {
+      padding: 32px 0;
+      border-bottom: 1px solid #f0f0f0;
+    }
+
+    h1, h2 {
+      margin: 0 0 12px 0;
+    }
+
     h1 {
-      margin-bottom: 0.2em;
-      font-size: 2rem;
+      font-size: 28px;
     }
+
+    h2 {
+      font-size: 22px;
+    }
+
     .tagline {
       color: #666;
-      margin-bottom: 2em;
+      margin-bottom: 20px;
     }
-    h2 {
-      margin-top: 1.5em;
+
+    p {
+      line-height: 1.7;
+      margin: 6px 0;
     }
-    ul {
-      padding-left: 1.2em;
+
+    .pill-list {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 8px;
+      margin-top: 10px;
+    }
+
+    .pill {
+      padding: 4px 10px;
+      border-radius: 999px;
+      border: 1px solid #ddd;
+      font-size: 12px;
+      color: #555;
+      background: #fafafa;
+    }
+
+    /* 카드 레이아웃 (Experiences / Projects 공통) */
+    .card-list {
+      display: flex;
+      flex-direction: column;
+      gap: 16px;
+      margin-top: 12px;
+    }
+
+    .card {
+      border: 1px solid #eee;
+      border-radius: 12px;
+      padding: 14px 16px;
+      background: #fff;
+    }
+
+    .card-title {
+      font-weight: 600;
+      margin-bottom: 4px;
+    }
+
+    .card-meta {
+      font-size: 13px;
+      color: #777;
+      margin-bottom: 6px;
+    }
+
+    .card-bullets {
+      margin: 6px 0 0 18px;
+      padding-left: 0;
+      font-size: 14px;
+    }
+
+    .card-bullets li {
+      margin-bottom: 4px;
+    }
+
+    /* Contact */
+    .contact-links a {
+      display: inline-block;
+      margin-right: 16px;
+      text-decoration: none;
+      color: #3366cc;
+      font-size: 14px;
+    }
+
+    .contact-links a:hover {
+      text-decoration: underline;
+    }
+
+    @media (max-width: 640px) {
+      .header-inner {
+        flex-direction: column;
+        align-items: flex-start;
+        gap: 8px;
+      }
+      .nav-links a {
+        margin-left: 0;
+        margin-right: 14px;
+      }
     }
   </style>
 </head>
 <body>
-  <h1>Minjae (Christine) Lee</h1>
-  <p class="tagline">Data Science & Analytics · UIUC</p>
+  <!-- 상단 네비게이션 -->
+  <header class="header-nav">
+    <div class="header-inner">
+      <div class="logo">Minjae Lee</div>
+      <nav class="nav-links">
+        <a href="#about">About</a>
+        <a href="#experience">Experiences</a>
+        <a href="#projects">Projects</a>
+        <a href="#contact">Contacts</a>
+      </nav>
+    </div>
+  </header>
 
-  <h2>About Me</h2>
-  <p>
-    I'm an Information Science + Data Science student at UIUC passionate about data analytics,
-    consulting, and product strategy. I love turning messy data into clear insights and
-    building things that help people make better decisions.
-  </p>
+  <main class="page">
+    <!-- About Section (홈) -->
+    <section id="about">
+      <h1>About</h1>
+      <p class="tagline">
+        Information Science + Data Science @ UIUC · Interested in analytics, consulting, and product strategy
+      </p>
+      <p>
+        Hi, I'm Minjae (Christine) Lee. I'm an undergraduate student at the University of Illinois at Urbana-Champaign,
+        majoring in Information Science and Data Science with a Business minor. I enjoy turning messy, real-world data
+        into clear insights that can support decisions in business, policy, and product design.
+      </p>
+      <p>
+        Recently, I've worked on projects ranging from credit card fraud detection and wine quality prediction
+        to market-entry strategy for a Korean medical device company exploring the U.S. healthcare market.
+        I like roles where I can combine data analysis with storytelling and strategy.
+      </p>
 
-  <h2>Projects</h2>
-  <ul>
-    <li><strong>PathFinderAI</strong> – Career recommendation platform using Python + SQL.</li>
-    <li><strong>Wine Quality Prediction</strong> – Random forest model (MAE 0.49).</li>
-    <li><strong>Fraud Detection Model</strong> – Built classifier for credit card fraud.</li>
-  </ul>
+      <div class="pill-list">
+        <span class="pill">Python</span>
+        <span class="pill">R</span>
+        <span class="pill">SQL</span>
+        <span class="pill">Tableau</span>
+        <span class="pill">Power BI</span>
+        <span class="pill">GitHub</span>
+        <span class="pill">Data Visualization</span>
+        <span class="pill">Market Research</span>
+      </div>
+    </section>
 
-  <h2>Experience</h2>
-  <ul>
-    <li>Data Analyst Apprentice – Cline Center for Advanced Social Research</li>
-    <li>Technology Consulting Intern – NielsenIQ Korea</li>
-    <li>Consultant – Business Intelligence Group (UIUC)</li>
-  </ul>
+    <!-- Experiences Section -->
+    <section id="experience">
+      <h2>Experiences</h2>
+      <div class="card-list">
+        <div class="card">
+          <div class="card-title">Technology Consulting Intern · NielsenIQ Korea</div>
+          <div class="card-meta">Summer 2024 · Seoul, Korea</div>
+          <ul class="card-bullets">
+            <li>Analyzed 5,000+ survey responses to understand customer experience for a major bank client.</li>
+            <li>Segmented customers and identified key pain points across the digital funnel.</li>
+            <li>Supported recommendations for engagement strategies based on data-driven insights.</li>
+          </ul>
+        </div>
 
-  <h2>Contact</h2>
-  <p>Email: <a href="mailto:mjae0314@gmail.com">mjae0314@gmail.com</a></p>
-  <p>GitHub / LinkedIn 링크는 나중에 추가 가능!</p>
+        <div class="card">
+          <div class="card-title">Consultant · Business Intelligence Group (UIUC)</div>
+          <div class="card-meta">2023–2024 · Champaign, IL</div>
+          <ul class="card-bullets">
+            <li>Led market research for a Korean ECG medical device company entering the U.S. market.</li>
+            <li>Reviewed regulatory landscape, competitors, and reimbursement pathways.</li>
+            <li>Helped develop a go-to-market strategy that combined clinical, financial, and user perspectives.</li>
+          </ul>
+        </div>
+
+        <div class="card">
+          <div class="card-title">Data Analyst Apprentice · Cline Center for Advanced Social Research</div>
+          <div class="card-meta">2024–Present · Champaign, IL</div>
+          <ul class="card-bullets">
+            <li>Worked with large-scale social and political datasets in Python and SQL.</li>
+            <li>Cleaned, transformed, and documented data to support research on media and conflict.</li>
+            <li>Collaborated with researchers on improving data quality and transparency.</li>
+          </ul>
+        </div>
+      </div>
+    </section>
+
+    <!-- Projects Section -->
+    <section id="projects">
+      <h2>Projects</h2>
+      <div class="card-list">
+        <div class="card">
+          <div class="card-title">PathFinderAI – Career Recommendation Platform</div>
+          <div class="card-meta">Python · SQL · GPT API</div>
+          <p>
+            Built a prototype that suggests career paths and relevant resources based on a user's background,
+            interests, and goals. Designed the data schema, implemented the recommendation logic, and
+            experimented with using LLMs to generate personalized guidance.
+          </p>
+        </div>
+
+        <div class="card">
+          <div class="card-title">Wine Quality Prediction</div>
+          <div class="card-meta">CS 307 · Random Forest Regression</div>
+          <p>
+            Trained a Random Forest model to predict wine quality scores based on physicochemical properties.
+            Evaluated performance with MAE and tuned hyperparameters to balance accuracy and model complexity.
+          </p>
+        </div>
+
+        <div class="card">
+          <div class="card-title">Credit Card Fraud Detection</div>
+          <div class="card-meta">CS 307 · Imbalanced Classification</div>
+          <p>
+            Built a classifier for credit card fraud using anonymized transaction data. Focused on improving
+            precision and recall under class imbalance, and compared different approaches to handling skewed labels.
+          </p>
+        </div>
+      </div>
+    </section>
+
+    <!-- Contacts Section -->
+    <section id="contact">
+      <h2>Contacts</h2>
+      <p>
+        I'm always happy to connect about data science, analytics, consulting, or product work.
+      </p>
+      <p><strong>Email</strong>: <a href="mailto:mjae0314@gmail.com">mjae0314@gmail.com</a></p>
+
+      <div class="contact-links">
+        <!-- 여기에 본인 링크 생기면 채우면 됨 -->
+        <!-- 예시:
+        <a href="https://www.linkedin.com/in/your-profile" target="_blank">LinkedIn</a>
+        <a href="https://github.com/mjaelee" target="_blank">GitHub</a>
+        -->
+      </div>
+
+      <p id="resume">
+        If you’d like a copy of my resume, feel free to reach out by email.
+      </p>
+    </section>
+  </main>
 </body>
 </html>
+
